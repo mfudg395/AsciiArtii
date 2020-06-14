@@ -5,13 +5,11 @@ public class ArtiiApp {
 
 	public static final String ROOT_DIR = System.getProperty("user.dir");
 	
-	public ArtiiApp() {
+	public ArtiiApp() { 
 		
 	}
 	
 	public void run() {
 		
 	}
-	
-	
 }
