@@ -71,8 +71,8 @@ public class AsciiArt {
 	}
 	
 	/**
-	 * Calculates the height of the ASCII art. Because we already have a list of each
-	 * row of the ASCII art, the height is equal to the number of rows there are.
+	 * Calculates the height of the ASCII art. Because we have a list of each row of
+	 * the ASCII art, the height is equal to the number of rows there are.
 	 * 
 	 * @return height of art
 	 */
@@ -81,12 +81,18 @@ public class AsciiArt {
 	}
 	
 	/**
-	 * Calculates the width of the ASCII art.
+	 * Calculates the width of the ASCII art. Because we have a list of each row of
+	 * the ASCII art, the width is equal to the String element with the longest length
+	 * in the list.
 	 * 
 	 * @return width of art
 	 */
 	private int calculateWidth() {
-		return 0;
+		int longestRow = 0;
+		for (String row : rows) {
+			longestRow = Math.max(longestRow, row.length());
+		}
+		return longestRow;
 	}
 	
 }
