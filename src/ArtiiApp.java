@@ -38,6 +38,7 @@ public class ArtiiApp {
 		displayWelcome();
 		while (!choice.equals("4")) {
 			displayDivider();
+			displayCurrentArt();
 			displayMenu();
 			choice = keyboard.nextLine();
 		}
@@ -57,5 +58,13 @@ public class ArtiiApp {
 		System.out.println("3 - load ascii art file");
 		System.out.println("4 - quit\n");
 		System.out.print("Choice? ");
+	}
+	
+	/**
+	 * Prints the ASCII art currently loaded. A default art is provided in the
+	 * AsciiArt class as a starting point.
+	 */
+	private void displayCurrentArt() {
+		System.out.println(art.toString());
 	}
 }
