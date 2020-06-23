@@ -50,19 +50,19 @@ public class AsciiArt {
 	 * character in the art.
 	 */
 	private void initialize() {
-		rows = getRows();
-		imageHeight = getHeight();
-		imageWidth = getWidth();
+		rows = calculateRows();
+		imageHeight = calculateHeight();
+		imageWidth = calculateWidth();
 	}
 	
 	/**
-	 * Returns the number of lines ("rows") that the ASCII art uses. An ArrayList
+	 * Calculates the number of lines ("rows") that the ASCII art uses. An ArrayList
 	 * is used to store each row; each String element in the ArrayList is a single row
 	 * of the ASCII art.
 	 * 
 	 * @return rows of art
 	 */
-	private ArrayList<String> getRows() {
+	private ArrayList<String> calculateRows() {
 		ArrayList<String> rowsOfArt = new ArrayList<String>();
 		while (artScanner.hasNextLine()) {
 			rowsOfArt.add(artScanner.nextLine());
@@ -71,20 +71,21 @@ public class AsciiArt {
 	}
 	
 	/**
-	 * Returns the height of the ASCII art.
+	 * Calculates the height of the ASCII art. Because we already have a list of each
+	 * row of the ASCII art, the height is equal to the number of rows there are.
 	 * 
 	 * @return height of art
 	 */
-	private int getHeight() {
-		return 0;
+	private int calculateHeight() {
+		return rows.size();
 	}
 	
 	/**
-	 * Returns the width of the ASCII art.
+	 * Calculates the width of the ASCII art.
 	 * 
 	 * @return width of art
 	 */
-	private int getWidth() {
+	private int calculateWidth() {
 		return 0;
 	}
 	
