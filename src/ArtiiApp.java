@@ -15,9 +15,17 @@ public class ArtiiApp {
 	public static final String ROOT_DIR = System.getProperty("user.dir");
 	
 	private Scanner keyboard;
+	private AsciiArt art;
+	private CharToColorMap artColorMap;
+	private AsciiToPngConverter converter;
+	private FileHelper fileHelper;
 	
 	public ArtiiApp() { 
 		keyboard = new Scanner(System.in);
+		art = new AsciiArt();
+		artColorMap = new CharToColorMap();
+		converter = new AsciiToPngConverter();
+		fileHelper = new FileHelper();
 	}
 	
 	/**
