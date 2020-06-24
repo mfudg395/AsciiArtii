@@ -112,4 +112,17 @@ public class AsciiArt {
 		return totalChars;
 	}
 	
+	/**
+	 * Returns the ASCII art image.
+	 * 
+	 * @return String of ASCII art
+	 */
+	public String toString() {
+		String art = "";
+		for (String row : rows) {
+			art += row + "\n";
+		}
+		return art;
+	}
+	
 }
