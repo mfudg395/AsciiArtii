@@ -16,15 +16,17 @@ public class AsciiArt {
 		"  /  \\/  (___)  \\/  \\" + "\n" +
 	        "  \\__(  o     o  )__/";
 	
-	private String name;
-	private int imageHeight;
-	private int imageWidth;
-	private int numChars;
-	
-	private ArrayList<String> rows;
-	private ArrayList<Character> uniqueChars;
-	
 	private Scanner artScanner;
+	
+	private final String name;
+	private final int imageHeight;
+	private final int imageWidth;
+	private final int numChars;
+	
+	private final ArrayList<String> rows;
+	private final ArrayList<Character> uniqueChars;
+	
+
 	
 	/**
 	 * Initializes all instance variables.
@@ -33,28 +35,15 @@ public class AsciiArt {
 	 * We are using DEFAULT_ART as the initial ASCII art when first running.
 	 */
 	public AsciiArt() {
-		name = "default";
-		rows = new ArrayList<String>();
-		imageHeight = 0;
-		imageWidth = 0;
-		numChars = 0;
-		
-		uniqueChars = new ArrayList<Character>();
 		artScanner = new Scanner(DEFAULT_ART);
 		
-		initialize();
-	}
-	
-	/**
-	 * Retrieves necessary data for the AsciiArt being used. This includes the
-	 * art's height, width, number of characters used, and a list of each unique
-	 * character in the art.
-	 */
-	private void initialize() {
+		name = "default";
 		rows = calculateRows();
 		imageHeight = calculateHeight();
 		imageWidth = calculateWidth();
 		numChars = calculateNumChars();
+		
+		uniqueChars = new ArrayList<Character>();
 	}
 	
 	/**
