@@ -34,10 +34,11 @@ public class AsciiArt {
 	 */
 	public AsciiArt() {
 		name = "default";
+		rows = new ArrayList<String>();
 		imageHeight = 0;
 		imageWidth = 0;
 		numChars = 0;
-		rows = new ArrayList<String>();
+		
 		uniqueChars = new ArrayList<Character>();
 		artScanner = new Scanner(DEFAULT_ART);
 		
@@ -53,6 +54,7 @@ public class AsciiArt {
 		rows = calculateRows();
 		imageHeight = calculateHeight();
 		imageWidth = calculateWidth();
+		numChars = calculateNumChars();
 	}
 	
 	/**
@@ -93,6 +95,21 @@ public class AsciiArt {
 			longestRow = Math.max(longestRow, row.length());
 		}
 		return longestRow;
+	}
+	
+	/**
+	 * Calculates the total number of characters used to make the ASCII art. Because we have
+	 * a list of each row of the ASCII art, the number of characters is equal to the sum of
+	 * the characters of each list element.
+	 * 
+	 * @return total chars used for art
+	 */
+	private int calculateNumChars() {
+		int totalChars = 0;
+		for (String row : rows) {
+			totalChars += row.length();
+		}
+		return totalChars;
 	}
 	
 }
