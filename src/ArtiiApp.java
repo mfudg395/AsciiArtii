@@ -37,8 +37,9 @@ public class ArtiiApp {
 		String choice = "0";
 		displayWelcome();
 		while (!choice.equals("4")) {
-			displayDivider();
 			displayCurrentArt();
+			displayArtInfo();
+			displayDivider();
 			displayMenu();
 			choice = keyboard.nextLine();
 		}
@@ -66,5 +67,15 @@ public class ArtiiApp {
 	 */
 	private void displayCurrentArt() {
 		System.out.println(art.toString());
+	}
+	
+	/**
+	 * Prints info about the ASCII art currently loaded; this info includes the
+	 * art's height, width, total number of characters, and unique characters used.
+	 */
+	private void displayArtInfo() {
+		System.out.println("height: " + art.getImageHeight());
+		System.out.println("width: " + art.getImageWidth());
+		System.out.println("characters used: " + art.getNumChars());
 	}
 }
