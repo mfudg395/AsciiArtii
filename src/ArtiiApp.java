@@ -41,6 +41,7 @@ public class ArtiiApp {
 			displayDivider();
 			displayMenu();
 			choice = keyboard.nextLine();
+			handle(choice);
 		}
 	}
 	
@@ -77,5 +78,20 @@ public class ArtiiApp {
 		System.out.println("width: " + art.getImageWidth());
 		System.out.println("characters used: " + art.getUniqueChars());
 		System.out.println("total characters: " + art.getNumChars());
+	}
+	
+	/**
+	 * Reads the choice the user made and calls the appropriate methods in response.
+	 * 
+	 * @param choice the menu selection the user made
+	 */
+	private void handle(String choice) {
+		if (choice.equals("1")) {
+			
+		} else if (choice.equals("4")) {
+			System.out.print("Thanks for arting.");
+		} else {
+			System.out.println("Invalid choice.");
+		}
 	}
 }
