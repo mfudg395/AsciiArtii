@@ -43,7 +43,7 @@ public class AsciiArt {
 		imageWidth = calculateWidth();
 		numChars = calculateNumChars();
 		
-		uniqueChars = new ArrayList<Character>();
+		uniqueChars = calculateUniqueChars();
 	}
 	
 	/**
@@ -99,6 +99,25 @@ public class AsciiArt {
 			totalChars += row.length();
 		}
 		return totalChars;
+	}
+	
+	/**
+	 * Calculates all the unique characters used to make the ASCII art. Because we have a list
+	 * of each row of the ASCII art, we can check the characters of each 
+	 * 
+	 * @return ArrayList of all unique chars used to make the art
+	 */
+	private ArrayList<Character> calculateUniqueChars() {
+		ArrayList<Character> uniqueChars = new ArrayList<Character>();
+		for (String row : rows) {
+			int length = row.length();
+			for (int i = 0; i < length; i++) {
+				if (!uniqueChars.contains(row.charAt(i))) {
+					uniqueChars.add(row.charAt(i));
+				}
+			}
+		}
+		return uniqueChars;
 	}
 	
 	/**
