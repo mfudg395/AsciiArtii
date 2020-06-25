@@ -75,6 +75,7 @@ public class ArtiiApp {
 	private void displayArtInfo() {
 		System.out.println("height: " + art.getImageHeight());
 		System.out.println("width: " + art.getImageWidth());
-		System.out.println("characters used: " + art.getNumChars());
+		System.out.println("characters used: " + art.getUniqueChars());
+		System.out.println("total characters: " + art.getNumChars());
 	}
 }
