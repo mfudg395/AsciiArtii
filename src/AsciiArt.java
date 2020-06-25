@@ -154,4 +154,10 @@ public class AsciiArt {
 		return numChars;
 	}
 	
+	/**
+	 * @return list of unique characters in ASCII art
+	 */
+	public ArrayList<Character> getUniqueChars() {
+		return uniqueChars;
+	}
 }
