@@ -114,4 +114,18 @@ public class AsciiArt {
 		return art;
 	}
 	
+	/**
+	 * @return height of ASCII art (in characters)
+	 */
+	public int getImageHeight() {
+		return imageHeight;
+	}
+	
+	/**
+	 * @return width of ASCII art (in characters)
+	 */
+	public int getImageWidth() {
+		return imageWidth;
+	}
+	
 }
