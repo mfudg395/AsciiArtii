@@ -128,4 +128,11 @@ public class AsciiArt {
 		return imageWidth;
 	}
 	
+	/**
+	 * @return number of characters in ASCII art
+	 */
+	public int getNumChars() {
+		return numChars;
+	}
+	
 }
