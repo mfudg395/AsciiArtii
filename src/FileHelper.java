@@ -51,4 +51,14 @@ public class FileHelper {
 		return false;
 	}
 	
+	/**
+	 * Returns the absolute path to a .txt file associated with a given ASCII art
+	 * image name.
+	 * 
+	 * @param asciiArtName the name of an ASCII art file
+	 * @return the absolute path to the ASCII art file
+	 */
+	public String asciiArtFilePath(String asciiArtName) {
+		return artRootDir + "/" + asciiArtName + ".txt";
+	}
 }
