@@ -37,4 +37,18 @@ public class FileHelper {
 		return availableFiles;
 	}
 	
+	/**
+	 * Returns true if a given file exists in the ascii-art-files directory.
+	 * 
+	 * @return
+	 */
+	public boolean asciiArtExists(String asciiArtName) {
+		for (String file : availableAsciiArtFiles()) {
+			if (asciiArtName.equals(file)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }
