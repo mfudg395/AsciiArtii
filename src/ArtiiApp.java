@@ -24,7 +24,7 @@ public class ArtiiApp {
 		art = new AsciiArt();
 		artColorMap = new CharToColorMap();
 		converter = new AsciiToPngConverter();
-		fileHelper = new FileHelper();
+		fileHelper = new FileHelper(ROOT_DIR);
 	}
 	
 	/**
@@ -86,12 +86,39 @@ public class ArtiiApp {
 	 * @param choice the menu selection the user made
 	 */
 	private void handle(String choice) {
-		if (choice.equals("1")) {
-			
+		if (choice.equals("3")) {
+			loadArtFile();
 		} else if (choice.equals("4")) {
 			System.out.print("Thanks for arting.");
 		} else {
 			System.out.println("Invalid choice.");
 		}
+	}
+	
+	/**
+	 * Prompts the user for a new art file to load from the available files in
+	 * ascii-art-files. The chosen AsciiArt will then be initialized.
+	 */
+	private void loadArtFile() {
+		String artToLoad = "";
+		
+		listAsciiArtFiles();
+		while (!fileHelper.asciiArtExists(artToLoad)) {
+			artToLoad = keyboard.nextLine();
+			if (!fileHelper.asciiArtExists(artToLoad)) {
+				System.out.print("Error: No such file. Try again: ");
+			}
+		}
+	}
+	
+	/**
+	 * Displays a formatted list of available files in ascii-art-files.
+	 */
+	private void listAsciiArtFiles() {
+		System.out.println("Here is a list of available art files: ");
+		for (String fileName : fileHelper.availableAsciiArtFiles()) {
+			System.out.println("[*] " + fileName);
+		}
+		System.out.print("Type the file to load: ");
 	}
 }
