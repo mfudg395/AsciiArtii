@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,6 +40,32 @@ public class AsciiArt {
 		artScanner = new Scanner(DEFAULT_ART);
 		
 		name = "default";
+		rows = calculateRows();
+		imageHeight = calculateHeight();
+		imageWidth = calculateWidth();
+		numChars = calculateNumChars();
+		
+		uniqueChars = calculateUniqueChars();
+	}
+	
+	/**
+	 * Initializes all instance variables.
+	 * 
+	 * This constructor takes in the path of an ASCII art file located in the
+	 * ascii-art-files directory, and sets the information according to that
+	 * ASCII art.
+	 * 
+	 * @param artFilePath the name of a file to load
+	 */
+	public AsciiArt(String artFilePath) {
+		File asciiArt = new File(artFilePath);
+		try {
+			artScanner = new Scanner(asciiArt);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		name = asciiArt.getName();
 		rows = calculateRows();
 		imageHeight = calculateHeight();
 		imageWidth = calculateWidth();
