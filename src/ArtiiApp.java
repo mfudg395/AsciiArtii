@@ -108,8 +108,8 @@ public class ArtiiApp {
 			if (!fileHelper.asciiArtExists(artToLoad)) {
 				System.out.print("Error: No such file. Try again: ");
 			}
-			art = new AsciiArt(fileHelper.asciiArtFilePath(artToLoad));
 		}
+		art = new AsciiArt(fileHelper.asciiArtFilePath(artToLoad));
 	}
 	
 	/**
