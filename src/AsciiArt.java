@@ -74,7 +74,7 @@ public class AsciiArt {
 			e.printStackTrace();
 		}
 		
-		name = asciiArt.getName();
+		name = asciiArt.getName().replace(".txt", "");
 		rows = calculateRows();
 		imageHeight = calculateHeight();
 		imageWidth = calculateWidth();
