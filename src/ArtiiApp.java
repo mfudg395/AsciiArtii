@@ -16,14 +16,14 @@ public class ArtiiApp {
 	private Scanner keyboard;
 	private AsciiArt art;
 	private CharToColorMap artColorMap;
-	private AsciiToPngConverter converter;
+	private AsciiConverter converter;
 	private FileHelper fileHelper;
 	
 	public ArtiiApp() { 
 		keyboard = new Scanner(System.in);
 		art = new AsciiArt();
 		artColorMap = new CharToColorMap();
-		converter = new AsciiToPngConverter();
+		converter = new AsciiConverter();
 		fileHelper = new FileHelper(ROOT_DIR);
 	}
 	
@@ -86,13 +86,29 @@ public class ArtiiApp {
 	 * @param choice the menu selection the user made
 	 */
 	private void handle(String choice) {
-		if (choice.equals("3")) {
+		if (choice.equals("1")) {
+			// TODO: save current ASCII art as .png
+		} else if  (choice.equals("2")) { 
+			saveHexFile();
+		}
+		else if (choice.equals("3")) {
 			loadArtFile();
 		} else if (choice.equals("4")) {
 			System.out.print("Thanks for arting.");
 		} else {
 			System.out.println("Invalid choice.");
 		}
+	}
+	
+	/**
+	 * Saves a .hex file of the current ASCII art loaded. The hex file will be a 
+	 * representation of the ASCII art where all characters are replaced with their
+	 * appropriate color as a six-digit hex value, as indicated by the ASCII art's 
+	 * corresponding .map file.
+	 */
+	private void saveHexFile() {
+		String filePath = fileHelper.hexcolorFilePath(art.getName());
+		System.out.println(filePath);
 	}
 	
 	/**
