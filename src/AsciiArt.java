@@ -171,6 +171,13 @@ public class AsciiArt {
 	}
 	
 	/**
+	 * @return name of ASCII art
+	 */
+	public String getName() {
+		return name;
+	}
+	
+	/**
 	 * @return height of ASCII art (in characters)
 	 */
 	public int getImageHeight() {
