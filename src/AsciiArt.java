@@ -2,7 +2,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * AsciiArtii - AsciiArt class
+ * 
+ * The AsciiArt class is a data type that represents a piece of ASCII art. Information
+ * about the ASCII art - it's height and width (in chars) as well as the number and
+ * types of characters used - is contained in AsciiArt objects.
+ * 
+ * @author Matthew Fudge
+ *
+ */
 public class AsciiArt {
 
 	private static final String DEFAULT_ART =

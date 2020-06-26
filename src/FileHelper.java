@@ -1,6 +1,14 @@
 import java.io.File;
 import java.util.ArrayList;
-
+/**
+ * AsciiArtii - FileHelper class
+ * 
+ * The FileHelper class provides various helper methods to assist with file handling in
+ * AsciiArtii. This includes listing available ASCII art files and methods to retrieve all
+ * necessary file paths.
+ * 
+ * @author Matthew Fudge
+ */
 public class FileHelper {
 
 	private final String artRootDir;
