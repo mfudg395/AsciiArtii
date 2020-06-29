@@ -44,7 +44,7 @@ public class CharToColorMap {
 				mapFileLines.add(scanner.nextLine());
 			}
 		} catch (FileNotFoundException e) {
-			System.err.println("Error: Cannot load .map file." + e);
+			System.err.println("Error: Cannot load .map file.");
 		} finally {
 			if (scanner != null) {
 				scanner.close();
