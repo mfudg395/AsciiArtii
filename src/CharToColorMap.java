@@ -2,7 +2,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * AsciiArtii - CharToColorMap class
+ * 
+ * The CharToColorMap reads from .map files associated with ASCII art files and
+ * maps hex colors to characters used in the ASCII art. It is used to return the
+ * hexcolor value associated with a given character.
+ * 
+ * @author Matthew Fudge
+ *
+ */
 public class CharToColorMap {
 
 	private static final String DEFAULT_COLOR = "#FFFFFF";
