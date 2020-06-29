@@ -23,7 +23,7 @@ public class ArtiiApp {
 		keyboard = new Scanner(System.in);
 		art = new AsciiArt();
 		artColorMap = new CharToColorMap();
-		converter = new AsciiConverter();
+		converter = new AsciiConverter(art, artColorMap);
 		fileHelper = new FileHelper(ROOT_DIR);
 	}
 	
@@ -108,7 +108,6 @@ public class ArtiiApp {
 	 */
 	private void saveHexFile() {
 		String filePath = fileHelper.hexcolorFilePath(art.getName());
-		System.out.println(filePath);
 	}
 	
 	/**
@@ -126,6 +125,8 @@ public class ArtiiApp {
 			}
 		}
 		art = new AsciiArt(fileHelper.asciiArtFilePath(artToLoad));
+		artColorMap = new CharToColorMap(fileHelper.mapFilePath(artToLoad));
+		converter = new AsciiConverter(art, artColorMap);
 	}
 	
 	/**
