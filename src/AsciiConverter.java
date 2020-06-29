@@ -21,4 +21,29 @@ public class AsciiConverter {
 		this.asciiArt = asciiArt;
 		this.colorMap = colorMap;
 	}
+	
+	/**
+	 * Saves the ASCII art as a .hex file at the specified location. The location
+	 * should always be the ROOT_DIR/generated-hex-files.
+	 * 
+	 * @param filePath
+	 */
+	public void saveHexFile(String filePath) {
+		PrintWriter writer = null;
+		try {
+			writer = new PrintWriter(filePath);
+			for (String artRow : asciiArt.getRows()) { // access each line of ASCII art
+				for (char rowChar : artRow.toCharArray()) { // access to each char in each line
+					writer.print(colorMap.colorFor(rowChar) + " ");
+				}
+				writer.print("\n");
+			}
+		} catch (FileNotFoundException e) {
+			System.err.println("ERROR: Could not write to file.");
+		} finally {
+			if (writer != null) {
+				writer.close();
+			}
+		}
+	}
 }
