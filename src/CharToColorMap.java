@@ -71,4 +71,11 @@ public class CharToColorMap {
 		}
 		return hexColor;
 	}
+	
+	/**
+	 * @return ArrayList of file lines in the map file
+	 */
+	public ArrayList<String> getMapLines() {
+		return mapFileLines;
+	}
 }
