@@ -51,4 +51,24 @@ public class CharToColorMap {
 			}
 		}
 	}
+	
+	/**
+	 * Returns the 6-digit hex color value of a given character in the .map file. 
+	 * This value includes the initial '#' character.
+	 * 
+	 * If no such character can be found, returns DEFAULT_COLOR.
+	 * 
+	 * @param c the character to find a hex color code for
+	 * @return the hex color code for the given character (or DEFAULT_COLOR)
+	 */
+	public String colorFor(char c) {
+		hexColor = DEFAULT_COLOR;
+		for (String mapLine : mapFileLines) {
+			if (mapLine.charAt(0) == c) {
+				hexColor = mapLine.substring(2);
+				break;
+			}
+		}
+		return hexColor;
+	}
 }
