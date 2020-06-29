@@ -23,7 +23,7 @@ public class FileHelper {
 	 */
 	public FileHelper(String rootDir) {
 		artRootDir = rootDir + "/ascii-art-files";
-		hexcolorRootDir = rootDir + "generated-hexcolor-files";
+		hexcolorRootDir = rootDir + "/generated-hexcolor-files";
 	}
 	
 	/**
