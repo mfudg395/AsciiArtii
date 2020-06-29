@@ -204,4 +204,11 @@ public class AsciiArt {
 	public ArrayList<Character> getUniqueChars() {
 		return uniqueChars;
 	}
+	
+	/**
+	 * @return list of rows in the ASCII art
+	 */
+	public ArrayList<String> getRows() {
+		return rows;
+	}
 }
