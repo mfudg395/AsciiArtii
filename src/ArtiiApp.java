@@ -108,6 +108,8 @@ public class ArtiiApp {
 	 */
 	private void saveHexFile() {
 		String filePath = fileHelper.hexcolorFilePath(art.getName());
+		converter.saveHexFile(filePath);
+		System.out.println("File saved to: " + filePath);
 	}
 	
 	/**
