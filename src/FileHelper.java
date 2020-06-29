@@ -23,9 +23,9 @@ public class FileHelper {
 	 * @param rootDir the root directory of this project
 	 */
 	public FileHelper(String rootDir) {
-		artRootDir = rootDir + "/ascii-art-files";
-		hexcolorRootDir = rootDir + "/generated-hexcolor-files";
-		mapRootDir = rootDir + "/color-map-files";
+		artRootDir = rootDir + "\\ascii-art-files";
+		hexcolorRootDir = rootDir + "\\generated-hexcolor-files";
+		mapRootDir = rootDir + "\\color-map-files";
 	}
 	
 	/**
@@ -71,7 +71,7 @@ public class FileHelper {
 	 * @return the absolute path to the ASCII art file
 	 */
 	public String asciiArtFilePath(String asciiArtName) {
-		return artRootDir + "/" + asciiArtName + ".txt";
+		return artRootDir + "\\" + asciiArtName + ".txt";
 	}
 	
 	/**
@@ -82,7 +82,7 @@ public class FileHelper {
 	 * @return the absolute path to the hexcolor file of given ASCII art
 	 */
 	public String hexcolorFilePath(String asciiArtName) {
-		return hexcolorRootDir + "/" + asciiArtName + ".hex";
+		return hexcolorRootDir + "\\" + asciiArtName + ".hex";
 	}
 	
 	/**
@@ -93,6 +93,6 @@ public class FileHelper {
 	 * @return the absolute path to the hexcolor file of given ASCII art
 	 */
 	public String mapFilePath(String asciiArtName) {
-		return mapRootDir + "/" + asciiArtName + ".map";
+		return mapRootDir + "\\" + asciiArtName + ".map";
 	}
 }
