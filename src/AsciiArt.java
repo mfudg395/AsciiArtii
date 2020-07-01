@@ -26,6 +26,8 @@ public class AsciiArt {
 		"   _\\_____________/_" + "\n" +
 		"  /  \\/  (___)  \\/  \\" + "\n" +
 	        "  \\__(  o     o  )__/";
+
+	private static final char SPACE = ' ';
 	
 	private Scanner artScanner;
 	
@@ -155,6 +157,33 @@ public class AsciiArt {
 			}
 		}
 		return uniqueChars;
+	}
+	
+	/**
+	 * Returns the character located at the given row & col of the ASCII art.
+	 * If a given row and column are out of bounds, a space is returned.
+	 * @param x the x coordinate of the char
+	 * @param y the y coordinate of the char
+	 * @return the char at x and y, or SPACE is x/y is out of bounds
+	 */
+	public char charAt(int row, int col) {
+		char charToReturn = SPACE;
+		if (isInBounds(row, col)) {
+			charToReturn = rows.get(row).charAt(col);
+		}
+		return charToReturn;
+	}
+	
+	/**
+	 * Returns true if the given row & column is are within the bounds of the
+	 * ASCII art. 
+	 * 
+	 * @param row the x coordinate
+	 * @param y the y coordinate
+	 * @return whether the given coordinates are in bounds
+	 */
+	private boolean isInBounds(int row, int col) {
+		return row < this.imageHeight && col < rows.get(row).length();
 	}
 	
 	/**
