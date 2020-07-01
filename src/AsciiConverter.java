@@ -38,11 +38,13 @@ public class AsciiConverter {
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(filePath);
-			for (String artRow : asciiArt.getRows()) { // access each line of ASCII art
-				for (char rowChar : artRow.toCharArray()) { // access to each char in each line
-					writer.print(colorMap.colorFor(rowChar) + " ");
+			for (int x = 0; x < image.getHeight(); x++) {
+				for (int y = 0; y < image.getWidth(); y++) {
+					int rgbCode = image.getRGB(y, x); // 
+					String hexCode = String.format("#%06X", rgbCode & 0xFFFFFF);
+					writer.print(hexCode + " ");
 				}
-				writer.print("\n");
+				writer.println();
 			}
 		} catch (FileNotFoundException e) {
 			System.err.println("ERROR: Could not write to file.");
