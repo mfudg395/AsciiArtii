@@ -59,11 +59,11 @@ public class AsciiConverter {
 	 * ColorMap.
 	 */
 	private void setColors() {
-		for (int x = 0; x < image.getWidth(); x++) {
-			for (int y = 0; y < image.getHeight(); y++) {
+		for (int x = 0; x < image.getHeight(); x++) {
+			for (int y = 0; y < image.getWidth(); y++) {
 				String hexCode = colorMap.colorFor(asciiArt.charAt(x, y));
 				int hexCodeAsInt = Integer.parseInt(hexCode.substring(1), HEXIDECIMAL_BASE);
-				image.setRGB(x, y, hexCodeAsInt);
+				image.setRGB(y, x, hexCodeAsInt);
 			}
 		}
 	}
