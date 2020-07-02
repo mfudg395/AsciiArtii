@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class FileHelper {
 
 	private final String artRootDir;
+	private final String pngRootDir;
 	private final String hexcolorRootDir;
 	private final String mapRootDir;
 	
@@ -24,6 +25,7 @@ public class FileHelper {
 	 */
 	public FileHelper(String rootDir) {
 		artRootDir = rootDir + "\\ascii-art-files";
+		pngRootDir = rootDir + "\\generated-png-files";
 		hexcolorRootDir = rootDir + "\\generated-hexcolor-files";
 		mapRootDir = rootDir + "\\color-map-files";
 	}
@@ -72,6 +74,16 @@ public class FileHelper {
 	 */
 	public String asciiArtFilePath(String asciiArtName) {
 		return artRootDir + "\\" + asciiArtName + ".txt";
+	}
+	
+	/**
+	 * Returns the absolute path to a .png file associated with a given ASCII art
+	 * image name.
+	 * @param asciiArtName the name of an ASCII art file
+	 * @return the absolute path to the ASCII art png
+	 */
+	public String pngFilePath(String asciiArtName) {
+		return pngRootDir + "\\" + asciiArtName + ".png";
 	}
 	
 	/**
