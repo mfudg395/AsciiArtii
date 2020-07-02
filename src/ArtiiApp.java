@@ -87,17 +87,26 @@ public class ArtiiApp {
 	 */
 	private void handle(String choice) {
 		if (choice.equals("1")) {
-			// TODO: save current ASCII art as .png
+			savePngFile();
 		} else if  (choice.equals("2")) { 
 			saveHexFile();
-		}
-		else if (choice.equals("3")) {
+		} else if (choice.equals("3")) {
 			loadArtFile();
 		} else if (choice.equals("4")) {
 			System.out.print("Thanks for arting.");
 		} else {
 			System.out.println("Invalid choice.");
 		}
+	}
+	
+	/**
+	 * Saves a .png file of the current ASCII art loaded. If the .png file does not
+	 * have an associated .map, all colors will be #FFFFFF.
+	 */
+	private void savePngFile() {
+		String filePath = fileHelper.pngFilePath(art.getName());
+		converter.savePngFile(filePath);
+		System.out.println("File saved to: " + filePath);
 	}
 	
 	/**
