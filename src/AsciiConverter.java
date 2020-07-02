@@ -1,6 +1,10 @@
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.imageio.ImageIO;
 
 /**
  * AsciiArtii - AsciiConverter class
@@ -29,6 +33,20 @@ public class AsciiConverter {
 	}
 	
 	/**
+	 * Saves the ASCII art as a .png file at the specified location. The location
+	 * should always be the ROOT_DIR/generated-png-files.
+	 * @param filePath
+	 */
+	public void savePngFile(String filePath) {
+		File savedImage = new File(filePath);
+		try {
+			ImageIO.write(image, "png", savedImage);
+		} catch (IOException e) {
+			System.err.println("ERROR: Unable to save .png.");
+		}
+	}
+	
+	/**
 	 * Saves the ASCII art as a .hex file at the specified location. The location
 	 * should always be the ROOT_DIR/generated-hex-files.
 	 * 
@@ -40,7 +58,7 @@ public class AsciiConverter {
 			writer = new PrintWriter(filePath);
 			for (int x = 0; x < image.getHeight(); x++) {
 				for (int y = 0; y < image.getWidth(); y++) {
-					int rgbCode = image.getRGB(y, x); // 
+					int rgbCode = image.getRGB(y, x);
 					String hexCode = String.format("#%06X", rgbCode & 0xFFFFFF);
 					writer.print(hexCode + " ");
 				}
