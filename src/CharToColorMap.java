@@ -44,7 +44,7 @@ public class CharToColorMap {
 				mapFileLines.add(scanner.nextLine());
 			}
 		} catch (FileNotFoundException e) {
-			System.err.println("Error: Cannot load .map file.");
+			System.err.println("Error: Cannot load .map file. Saving this art as .png will result in a blank photo.");
 		} finally {
 			if (scanner != null) {
 				scanner.close();
