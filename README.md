@@ -12,9 +12,11 @@ AsciiArtii can load any ASCII art stored in a .txt file that's placed in the `as
 a corresponding .map file, if one can be found in `color-map-files`. A `.map` file assigns characters used in an ASCII art to a hex color code, so that
 you can have some color if you choose to save an image of your ASCII art. `.map` files must be formatted as follows...
 
-`X #FFFFFF`
-`Y #FFFFFF`
-`Z #FFFFFF`
+```
+X #FFFFFF
+Y #FFFFFF
+Z #FFFFFF
+```
 
 ...where X/Y/Z are any characters used in the ASCII art, and #FFFFFF is any hex color code. Each line follows that format, and is for a different character/color 
 pairing.
