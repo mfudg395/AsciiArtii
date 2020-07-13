@@ -93,6 +93,8 @@ public class ArtiiApp {
 		} else if (choice.equals("3")) {
 			loadArtFile();
 		} else if (choice.equals("4")) {
+			createMapFile();
+		} else if (choice.equals("4")) {
 			System.out.print("Thanks for arting.");
 		} else {
 			System.out.println("Invalid choice.");
@@ -149,5 +151,9 @@ public class ArtiiApp {
 			System.out.println("[*] " + fileName);
 		}
 		System.out.print("Type the file to load: ");
+	}
+	
+	private void createMapFile() {
+		// TODO: implement the creation of a new .map file for current art
 	}
 }
